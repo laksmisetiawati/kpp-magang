@@ -1,0 +1,6 @@
+- keluhan seharusnya ada field pilih pelapor dan pilih customer service
+- keluhan di status seharusnya dibuat dropdown, supaya bisa dikelompokan sesuai status
+- barang seharusnya tidak ada field pilih barang
+- tidak ada field merk barang di form barang
+- tidak perlu ada dropdown pilihan customer service di form customer service
+- tidak perlu ada dropdown pilihan pelapor di form pelapor
