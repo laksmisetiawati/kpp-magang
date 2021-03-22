@@ -40,7 +40,7 @@ class KeluhanController extends Controller
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
-        return view('keluhan.list', $datas);
+        return view('keluhan.create', $datas);
     }
     
     public function save(Request $request) {
@@ -74,7 +74,6 @@ class KeluhanController extends Controller
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
-        return view('keluhan.list', $datas);
         return view('keluhan.detail', $datas);
     }
     

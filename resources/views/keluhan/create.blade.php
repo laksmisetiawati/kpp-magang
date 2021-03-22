@@ -46,6 +46,7 @@
         <div>
             <button type="submit">Submit</button>
         </div>
+        @csrf
     </form>
 
 @endsection

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 //memanggil model-model. silahkan disesuaikan dengan kebutuhan masing-masing controller
 //misalnya controller pelapor hanya butuh model pelapor saja, maka yang dipanggil hanya model pelapor saja
-use App\Models\Pelapor;
+use App\Models\Cs;
 
-class PelaporController extends Controller
+class CsController extends Controller
 {
     public function index() {
         $datas = [
@@ -17,11 +17,11 @@ class PelaporController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'pelapor' => Pelapor::get() //mengambil data Keluhan dari model keluhan
+            'cs' => Cs::get() //mengambil data Keluhan dari model keluhan
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
-        return view('pelapor.list', $datas);
+        return view('cs.list', $datas);
     }
     
     public function create() {
@@ -31,24 +31,24 @@ class PelaporController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'pelapor' => Pelapor::get(), //mengambil data Pelapor dari model Pelapor. model Pelapor harus dibuat terlebih dahulu
+            'cs' => Cs::get(), //mengambil data Cs dari model Cs. model Cs harus dibuat terlebih dahulu
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
-        return view('pelapor.create', $datas);
+        return view('cs.create', $datas);
     }
     
     public function save(Request $request) {
-        $insert = new Pelapor(); //memanggil Class Keluhan dari model Keluhan
+        $insert = new Cs(); //memanggil Class Keluhan dari model Keluhan
         //field-field yang akan diinput. field yang ditulis harus sama persis dengan yang ada di model
-        $insert->id_pelapor = $request->input('pelapor');
-        $insert->nama_pelapor = $request->input('nama_pelapor');
+        $insert->id_cs = $request->input('cs');
+        $insert->nama_cs = $request->input('nama_cs');
         $insert->no_telp = $request->input('no_telp');
         $insert->alamat = $request->input('alamat');
         $insert->email = $request->input('email');
         $insert->save();
 
-        return redirect('/pelapor/')->with([
+        return redirect('/cs/')->with([
             'success-message' => 'Success add.'
         ]);
     }
@@ -60,26 +60,26 @@ class PelaporController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'pelapor' => Pelapor::where('id', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
-            'pelapor' => Pelapor::get(), //mengambil data Pelapor dari model Pelapor. model Pelapor harus dibuat terlebih dahulu
+            'cs' => Cs::where('id', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
+            'cs' => Cs::get(), //mengambil data Cs dari model Cs. model Cs harus dibuat terlebih dahulu
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
-        return view('pelapor.detail', $datas);
+        return view('cs.detail', $datas);
     }
     
     public function update($id, Request $request) {
-        Pelapor::where('id', $id)->update(
+        Cs::where('id', $id)->update(
             array(
-                'id_pelapor' => $request->input('pelapor'),
-                'nama_pelapor' => $request->input('nama_pelapor'),
+                'id_cs' => $request->input('cs'),
+                'nama_cs' => $request->input('nama_cs'),
                 'no_telp' => $request->input('no_telp'),
                 'alamat' => $request->input('alamat'),
                 'email' => $request->input('email')
             )
         );
 
-        return redirect('/pelapor/')->with([
+        return redirect('/cs/')->with([
             'success-message' => 'Success update.'
         ]);
     }

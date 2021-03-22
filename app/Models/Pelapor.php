@@ -5,22 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Keluhan extends Model
+class Pelapor extends Model
 {
     use HasFactory;
 
-    protected $table = "keluhan"; //nama table database
+    protected $table = "pelapor"; //nama table database
 
-    protected $primaryKey = "id_transaksi"; //field yang digunakan sebagai primary key
+    protected $primaryKey = "id_pelapor"; //flied yang digunakan sebagai primary key
     
     //field lainnya. isinya menyesuaikan dengan design database yang sebelumnya sudah dibuat
     protected $fillable = [
-        'id_barang',
         'id_pelapor',
-        'id_cs',
-        'tanggal',
-        'keterangan_kerusakan',
-        'jenis_kerusakan',
-        'status'
+        'nama_pelapor',
+        'no_telp',
+        'alamat',
+        'email',
     ];
 }

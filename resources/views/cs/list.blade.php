@@ -11,16 +11,16 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($pelapor as $p) { ?>
+        <?php foreach($cs as $c) { ?>
             <tr>
-                <th><?php echo $p['no_telp']; ?></th>
-                <th><?php echo $p['email']; ?></th>
+                <th><?php echo $c['no_telp']; ?></th>
+                <th><?php echo $c['email']; ?></th>
                 <th>
-                    <a href="<?php echo url('/pelapor/detail/'.$pelapor['id_pelapor']); ?>">Edit</a>
+                    <a href="<?php echo url('/cs/detail/'.$cs['id_cs']); ?>">Edit</a>
                     <a>Delete</a>
                 </th>
             </tr>
-        <?php } ?>
+        <?php } ?> 
     </tbody>
 </table>
 

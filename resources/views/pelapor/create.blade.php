@@ -2,17 +2,17 @@
 
 @section('content')
 
-    <form>
+    <form method="POST" action="<?php echo url('/pelapor/save'); ?>">
         <div>
-            <label>Customer Services</label>
+            <label>Pelapor</label>
             <select>
-                <option value='1'>CS 1</option>
-                <option value='2'>CS 2</option>
-                <option value='3'>CS 3</option>
+                <?php foreach($pelapor as $p) { //meng-loop data cs ?>
+                    <option value='<?php echo $p['id_pelapor']; ?>'><?php echo $p['nama_pelapor']; ?></option>
+                <?php } ?>
             </select>
         </div>
         <div>
-            <label>Nama Customer Service</label>
+            <label>No telpon</label>
             <textarea></textarea>
         </div>
         <div>
@@ -24,12 +24,9 @@
             <textarea></textarea>
         </div>
         <div>
-            <label>No telpon</label>
-            <textarea></textarea>
-        </div>
-        <div>
             <button type="submit">Submit</button>
         </div>
+        @csrf
     </form>
 
 @endsection

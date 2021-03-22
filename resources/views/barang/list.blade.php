@@ -2,38 +2,26 @@
 
 @section('content')
 
-    <form>
-        <div>
-            <label>Barang</label>
-            <select>
-                <option value='1'>Barang 1</option>
-                <option value='2'>Barang 2</option>
-                <option value='3'>Barang 3</option>
-            </select>
-        </div>
-        <div>
-            <label>Nama Barang</label>
-            <input type="text" />
-        </div>
-        <div>
-            <label>Type Barang</label>
-            <input type="text" />
-        </div>
-        <div>
-            <label>No Nota</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Ket Klaim Garansi</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Serial Number</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
+<table>
+    <thead>
+        <tr>
+            <th>Nama Barang</th>
+            <th>Type Barang</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($barang as $b) { ?>
+            <tr>
+                <th><?php echo $b['nama_barang']; ?></th>
+                <th><?php echo $b['tipe_barang']; ?></th>
+                <th>
+                    <a href="<?php echo url('/barang/detail/'.$barang['id_barang']); ?>">Edit</a>
+                    <a>Delete</a>
+                </th>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
 
 @endsection

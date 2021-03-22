@@ -7,7 +7,7 @@
             <label>Customer Service</label>
             <select>
                 <?php foreach($cs as $c) { //meng-loop data cs ?>
-                    <option value="<?php echo $c['id_cs']; ?>" <?php if($b['id_cs'] == $keluhan['id_cs']) { echo 'selected'; } ?>><?php echo $c['nama_cs']; ?></option>
+                    <option value="<?php echo $c['id_cs']; ?>" <?php if($c['id_cs'] == $keluhan['id_cs']) { echo 'selected'; } ?>><?php echo $c['nama_cs']; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -46,6 +46,7 @@
         <div>
             <button type="submit">Submit</button>
         </div>
+        @csrf
     </form>
 
 @endsection

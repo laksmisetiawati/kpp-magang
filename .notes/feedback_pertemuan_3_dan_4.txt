@@ -1,0 +1,35 @@
+Halaman customer service:
+1. pada halaman create customer service tidak perlu ada dropdown customer service. dihapus saja dropdown customer service
+2. file model Cs.php pada bagian variable $fillable (line 17), tidak perlu di declare 'id_cs' karena 'id_cs' akan dibuat auto create dengan auto increment dari mysql. 'id_cs' dihapus saja dari array variable $fillable
+3. file CsController.php pada function create tidak perlu ditambahkan array key 'cs' (line 34). 'cs' => Cs::get() dihapus saja. karena pada saat membuat customer service tidak perlu ditampilkan data customer service yang sudah pernah dibuat
+4. create.blade.php pada folder views/cs tidak ada input field untuk nama customer. semua input field harus disesuaikan dengan database
+5. Isi thead dan tbody pada file list.blade.php disesuaikan dengan database customer service. menurut kalian apa saja yang harus ditampilkan di list tersebut
+
+
+
+Halaman barang:
+1. pada halaman create barang tidak perlu ada dropdown barang. dihapus saja dropdown barang
+2. file model Barang.php pada bagian variable $fillable (line 18), tidak perlu di declare 'id_barang' karena 'id_barang' akan dibuat auto create dengan auto increment dari mysql. 'id_barang' dihapus saja dari array variable $fillable
+3. file BarangController.php pada function create tidak perlu ditambahkan array key 'barang' (line 34). 'barang' => Barang::get() dihapus saja. karena pada saat membuat barang tidak perlu ditampilkan data barang yang sudah pernah dibuat
+4. create.blade.php pada folder views/barang tidak ada input field untuk nama barang. semua input field harus disesuaikan dengan database
+5. Isi thead dan tbody pada file list.blade.php disesuaikan dengan database barang. menurut kalian apa saja yang harus ditampilkan di list tersebut
+
+
+
+Halaman pelapor:
+1. pada halaman create pelapor tidak perlu ada dropdown pelapor. dihapus saja dropdown pelapor
+2. file model Pelapor.php pada bagian variable $fillable (line 18), tidak perlu di declare 'id_pelapor' karena 'id_pelapor' akan dibuat auto create dengan auto increment dari mysql. 'id_pelapor' dihapus saja dari array variable $fillable
+3. file PelaporController.php pada function create tidak perlu ditambahkan array key 'pelapor' (line 34). 'pelapor' => Pelapor::get() dihapus saja. karena pada saat membuat pelapor tidak perlu ditampilkan data pelapor yang sudah pernah dibuat
+4. create.blade.php pada folder views/pelapor tidak ada input field untuk nama pelapor. semua input field harus disesuaikan dengan database
+5. Isi thead dan tbody pada file list.blade.php disesuaikan dengan database pelapor. menurut kalian apa saja yang harus ditampilkan di list tersebut
+
+
+
+
+
+
+Semua halaman:
+1. create.blade.php dan detail.blade.php pada folder views, semua tag html input dan textarea harus ditambahkan attributes name="". attributes name="" pada setiap halaman (halaman barang, halaman cs, dll) harus disesuaikan dengan $request->input() pada controller masing-masing.
+2. untuk semua field input yang hanya terbatas beberapa karakter saja, lebih baik menggunakan tag html <input />. kecuali field input yang isinya panjang seperti alamat, lebih baik menggunakan tag html <textarea></textarea>
+3. tambahkan field created_at untuk semua table dengan datatype TIMESTAMP dan pada bagian default pilih CURRENT_TIMESTAMP
+4. tambahkan field updated_at untuk semua table dengan datatype TIMESTAMP, pada bagian default pilih CURRENT_TIMESTAMP dan pada bagian Attributes pilih on update CURRENT_TIMESTAMP
