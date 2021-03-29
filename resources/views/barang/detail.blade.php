@@ -3,16 +3,12 @@
 @section('content')
 
     <form method="POST" action="<?php echo url('/barang/update/'.$barang['id_barang']); ?>">
-    <div>
-            <label>Barang</label>
-            <select>
-                <?php foreach($barang as $b) { //meng-loop data barang ?>
-                    <option value='<?php echo $b['id_barang']; ?>'><?php echo $b['nama_barang']; ?></option>
-                <?php } ?>
-            </select>
+        <div>
+            <label>Nama Barang</label>
+            <textarea><?php echo $barang['nama_barang']; ?></textarea> <!-- menampilkan data dari database -->
         </div>
         <div>
-            <label>Type Barang</label>
+            <label>Tipe Barang</label>
             <textarea><?php echo $barang['tipe_barang']; ?></textarea> <!-- menampilkan data dari database -->
         </div>
         <div>
@@ -28,7 +24,7 @@
             <textarea><?php echo $barang['ket_klaim_garansi']; ?></textarea> <!-- menampilkan data dari database -->
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="save">Save</button>
         </div>
         @csrf
     </form>

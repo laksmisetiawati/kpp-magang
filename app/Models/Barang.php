@@ -15,7 +15,6 @@ class Barang extends Model
     
     //field lainnya. isinya menyesuaikan dengan design database yang sebelumnya sudah dibuat
     protected $fillable = [
-        'id_barang',
         'nama_barang',
         'tipe_barang',
         'serial_number',

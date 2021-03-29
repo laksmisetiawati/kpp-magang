@@ -15,7 +15,6 @@ class Cs extends Model
     
     //field lainnya. isinya menyesuaikan dengan design database yang sebelumnya sudah dibuat
     protected $fillable = [
-        'id_cs',
         'nama_cs',
         'no_telp',
         'alamat',

@@ -4,31 +4,27 @@
 
     <form method="POST" action="<?php echo url('/barang/save'); ?>">
         <div>
-            <label>Barang</label>
-            <select>
-                <?php foreach($barang as $b) { //meng-loop data barang ?>
-                    <option value='<?php echo $b['id_barang']; ?>'><?php echo $b['nama_barang']; ?></option>
-                <?php } ?>
-            </select>
+            <label>Nama Barang</label>
+            <input name="nama_barang"/>
         </div>
         <div>
-            <label>Type Barang</label>
-            <input type="text" />
-        </div>
-        <div>
-            <label>No Nota</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Ket Klaim Garansi</label>
-            <textarea></textarea>
+            <label>Tipe Barang</label>
+            <textarea name="tipe_barang"></textarea>
         </div>
         <div>
             <label>Serial Number</label>
-            <textarea></textarea>
+            <textarea name="serial_number"></textarea>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <label>No Nota</label>
+            <textarea name="no_nota"></textarea>
+        </div>
+        <div>
+            <label>Ket Klaim Garansi</label>
+            <textarea name="ket_klaim_garansi"></textarea>
+        </div>
+        <div>
+            <button type="save">Save</button>
         </div>
         @csrf
     </form>

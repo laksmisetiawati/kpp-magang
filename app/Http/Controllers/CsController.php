@@ -31,7 +31,6 @@ class CsController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'cs' => Cs::get(), //mengambil data Cs dari model Cs. model Cs harus dibuat terlebih dahulu
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -41,7 +40,6 @@ class CsController extends Controller
     public function save(Request $request) {
         $insert = new Cs(); //memanggil Class Keluhan dari model Keluhan
         //field-field yang akan diinput. field yang ditulis harus sama persis dengan yang ada di model
-        $insert->id_cs = $request->input('cs');
         $insert->nama_cs = $request->input('nama_cs');
         $insert->no_telp = $request->input('no_telp');
         $insert->alamat = $request->input('alamat');
@@ -60,8 +58,7 @@ class CsController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'cs' => Cs::where('id', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
-            'cs' => Cs::get(), //mengambil data Cs dari model Cs. model Cs harus dibuat terlebih dahulu
+            'cs' => Cs::where('id_cs', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -69,9 +66,8 @@ class CsController extends Controller
     }
     
     public function update($id, Request $request) {
-        Cs::where('id', $id)->update(
+        Cs::where('id_cs', $id)->update(
             array(
-                'id_cs' => $request->input('cs'),
                 'nama_cs' => $request->input('nama_cs'),
                 'no_telp' => $request->input('no_telp'),
                 'alamat' => $request->input('alamat'),

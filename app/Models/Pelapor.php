@@ -11,11 +11,10 @@ class Pelapor extends Model
 
     protected $table = "pelapor"; //nama table database
 
-    protected $primaryKey = "id_pelapor"; //flied yang digunakan sebagai primary key
+    protected $primaryKey = "id_pelapor"; //field yang digunakan sebagai primary key
     
     //field lainnya. isinya menyesuaikan dengan design database yang sebelumnya sudah dibuat
     protected $fillable = [
-        'id_pelapor',
         'nama_pelapor',
         'no_telp',
         'alamat',

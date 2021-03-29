@@ -31,7 +31,6 @@ class PelaporController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'pelapor' => Pelapor::get(), //mengambil data Pelapor dari model Pelapor. model Pelapor harus dibuat terlebih dahulu
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -60,8 +59,7 @@ class PelaporController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'pelapor' => Pelapor::where('id', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
-            'pelapor' => Pelapor::get(), //mengambil data Pelapor dari model Pelapor. model Pelapor harus dibuat terlebih dahulu
+            'pelapor' => Pelapor::where('id_pelapor', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -69,9 +67,8 @@ class PelaporController extends Controller
     }
     
     public function update($id, Request $request) {
-        Pelapor::where('id', $id)->update(
+        Pelapor::where('id_pelapor', $id)->update(
             array(
-                'id_pelapor' => $request->input('pelapor'),
                 'nama_pelapor' => $request->input('nama_pelapor'),
                 'no_telp' => $request->input('no_telp'),
                 'alamat' => $request->input('alamat'),

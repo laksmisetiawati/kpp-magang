@@ -31,7 +31,6 @@ class BarangController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'barang' => Barang::get(), //mengambil data Barang dari model Barang. model Barang harus dibuat terlebih dahulu
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -61,8 +60,7 @@ class BarangController extends Controller
 
             //list data-data. silahkan disesuaikan dengan data-data yang dibutuhkan pada setiap halaman saja
             //jika tidak dibutuhkan bisa dihapus saja
-            'barang' => Barang::where('id', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
-            'barang' => Barang::get(), //mengambil data Barang dari model Barang. model Barang harus dibuat terlebih dahulu
+            'barang' => Barang::where('id_barang', $id)->first(), //mengambil 1 data Keluhan dari model keluhan, jika id keluhan adalah $id
         ];
 
         // $datas digunakan untuk mengirimkan data-data dari database ataupun data statis ke view
@@ -70,9 +68,8 @@ class BarangController extends Controller
     }
     
     public function update($id, Request $request) {
-        Barang::where('id', $id)->update(
+        Barang::where('id_barang', $id)->update(
             array(
-                'id_barang' => $request->input('barang'),
                 'nama_barang' => $request->input('nama_barang'),
                 'tipe_barang' => $request->input('tipe_barang'),
                 'serial_number' => $request->input('serial_number'),

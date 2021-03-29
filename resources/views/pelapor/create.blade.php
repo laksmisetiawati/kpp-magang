@@ -4,27 +4,23 @@
 
     <form method="POST" action="<?php echo url('/pelapor/save'); ?>">
         <div>
-            <label>Pelapor</label>
-            <select>
-                <?php foreach($pelapor as $p) { //meng-loop data cs ?>
-                    <option value='<?php echo $p['id_pelapor']; ?>'><?php echo $p['nama_pelapor']; ?></option>
-                <?php } ?>
-            </select>
+            <label>Nama Pelapor</label>
+            <input name="nama_pelapor"/>
         </div>
         <div>
             <label>No telpon</label>
-            <textarea></textarea>
-        </div>
-        <div>
-            <label>Email</label>
-            <textarea></textarea>
+            <textarea name="no_telp"></textarea>
         </div>
         <div>
             <label>Alamat</label>
-            <textarea></textarea>
+            <textarea name="alamat"></textarea>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <label>Email</label>
+            <textarea name="email"></textarea>
+        </div>
+        <div>
+            <button type="save">Save</button>
         </div>
         @csrf
     </form>
