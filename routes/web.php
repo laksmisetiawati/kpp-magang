@@ -19,7 +19,7 @@ use App\Http\Controllers\PelaporController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('home');
 });
 
 //Route::get('/keluhan', function () {
@@ -28,36 +28,40 @@ Route::get('/', function () {
 
 //halaman keluhan
 Route::prefix('/keluhan')->group(function() {
-    Route::get('/',[KeluhanController::class,'index']);
-    Route::get('create',[KeluhanController::class,'create']);
-    Route::post('save',[KeluhanController::class,'save']);
-    Route::get('detail/{id}',[KeluhanController::class,'detail']);
-    Route::post('update/{id}',[KeluhanController::class,'update']);
+Route::get('/',[KeluhanController::class,'index']);
+Route::get('create',[KeluhanController::class,'create']);
+Route::post('save',[KeluhanController::class,'save']);
+Route::get('detail/{id}',[KeluhanController::class,'detail']);
+Route::post('update/{id}',[KeluhanController::class,'update']);
 });
 
 //halaman barang
 Route::prefix('/barang')->group(function() {
-    Route::get('/',[BarangController::class,'index']);
-    Route::get('create',[BarangController::class,'create']);
-    Route::post('save',[BarangController::class,'save']);
-    Route::get('detail/{id}',[BarangController::class,'detail']);
-    Route::post('update/{id}',[BarangController::class,'update']);
+Route::get('/',[BarangController::class,'index']);
+Route::get('create',[BarangController::class,'create']);
+Route::post('save',[BarangController::class,'save']);
+Route::get('detail/{id}',[BarangController::class,'detail']);
+Route::post('update/{id}',[BarangController::class,'update']);
 });
 
 //halaman customer services
 Route::prefix('/cs')->group(function() {
-    Route::get('/',[CsController::class,'index']);
-    Route::get('create',[CsController::class,'create']);
-    Route::post('save',[CsController::class,'save']);
-    Route::get('detail/{id}',[CsController::class,'detail']);
-    Route::post('update/{id}',[CsController::class,'update']);
+Route::get('/',[CsController::class,'index']);
+Route::get('create',[CsController::class,'create']);
+Route::post('save',[CsController::class,'save']);
+Route::get('detail/{id}',[CsController::class,'detail']);
+Route::post('update/{id}',[CsController::class,'update']);
 });
 
 //halaman pelapor
 Route::prefix('/pelapor')->group(function() {
-    Route::get('/',[PelaporController::class,'index']);
-    Route::get('create',[PelaporController::class,'create']);
-    Route::post('save',[PelaporController::class,'save']);
-    Route::get('detail/{id}',[PelaporController::class,'detail']);
-    Route::post('update/{id}',[PelaporController::class,'update']);
+Route::get('/',[PelaporController::class,'index']);
+Route::get('create',[PelaporController::class,'create']);
+Route::post('save',[PelaporController::class,'save']);
+Route::get('detail/{id}',[PelaporController::class,'detail']);
+Route::post('update/{id}',[PelaporController::class,'update']);
 });
+
+Route::get('home',function() {
+  return view('home');
+}); 

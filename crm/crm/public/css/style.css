@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.table{
+  color:blue;
+}
+.button{
+  background-color:blue;
+  color:white;
+  padding:10px;
+  display:black;
+  width: 148px;
+}
+
+.blue-color{ 
+  color: blue;
+  font-size: 20px;
+  font-family: 'Roboto', 'sans-serif';
+
+}
